@@ -1,0 +1,16 @@
+> print( pbmc[['pca']], dims = 1:5, nfeatures = 5)
+PC_ 1 
+Positive:  MALAT1, LTB, IL32, CD2, ACAP1 
+Negative:  CST3, TYROBP, LST1, AIF1, FTL 
+PC_ 2 
+Positive:  CD79A, MS4A1, TCL1A, HLA-DQA1, HLA-DRA 
+Negative:  NKG7, PRF1, CST7, GZMA, GZMB 
+PC_ 3 
+Positive:  HLA-DQA1, CD79A, CD79B, HLA-DQB1, HLA-DPB1 
+Negative:  PPBP, PF4, SDPR, SPARC, GNG11 
+PC_ 4 
+Positive:  HLA-DQA1, CD79A, CD79B, HIST1H2AC, HLA-DQB1 
+Negative:  VIM, S100A8, S100A6, S100A4, S100A9 
+PC_ 5 
+Positive:  GZMB, FGFBP2, NKG7, GNLY, PRF1 
+Negative:  LTB, VIM, AQP3, PPA1, MAL 
