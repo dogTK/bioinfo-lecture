@@ -3,6 +3,9 @@
 library(dplyr)
 library(Seurat)
 library(patchwork)
+library(SingleR)
+library(celldex)
+library(SingleCellExperiment)
 # ------------------------
 
 
@@ -60,7 +63,6 @@ HC4 <- CreateSeuratObject(counts = HC4.data, project = "HC4", min.cells = 3, min
 HC4 [["percent.mt"]] <- PercentageFeatureSet(HC4, pattern = "^MT-")
 # VlnPlot(HC4, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 # ------------------------
-
 
 
 # All Data Merge
