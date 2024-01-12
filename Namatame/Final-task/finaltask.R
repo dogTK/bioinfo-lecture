@@ -33,6 +33,35 @@ KD2 [["percent.mt"]] <- PercentageFeatureSet(KD2, pattern = "^MT-")
 # VlnPlot(KD2, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 # ------------------------
 
+## KD3
+# ------------------------
+KD3 <- CreateSeuratObject(counts = KD3.data, project = "KD3", min.cells = 3, min.features = 200)
+KD3 [["percent.mt"]] <- PercentageFeatureSet(KD3, pattern = "^MT-")
+# VlnPlot(KD3, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+# ------------------------
+
+## HC1
+# ------------------------
+HC1 <- CreateSeuratObject(counts = HC1.data, project = "HC1", min.cells = 3, min.features = 200)
+HC1 [["percent.mt"]] <- PercentageFeatureSet(HC1, pattern = "^MT-")
+# VlnPlot(HC1, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+# ------------------------
+
+## HC2
+# ------------------------
+HC2 <- CreateSeuratObject(counts = HC2.data, project = "HC2", min.cells = 3, min.features = 200)
+HC2 [["percent.mt"]] <- PercentageFeatureSet(HC2, pattern = "^MT-")
+# VlnPlot(HC2, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+# ------------------------
+
+## HC4
+# ------------------------
+HC4 <- CreateSeuratObject(counts = HC4.data, project = "HC4", min.cells = 3, min.features = 200)
+HC4 [["percent.mt"]] <- PercentageFeatureSet(HC4, pattern = "^MT-")
+# VlnPlot(HC4, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+# ------------------------
+
+
 
 # All Data Merge
 # ------------------------
