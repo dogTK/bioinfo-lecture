@@ -92,6 +92,16 @@ cell.int1$KDandHC <- results$labels
 
 # QC & Normalization
 # ------------------------
+## QC
+# ---------
+KD1 <- subset(KD1, subset = percent.mt < 20)
+KD2 <- subset(KD2, subset = percent.mt < 20)
+KD3 <- subset(KD3, subset = percent.mt < 20)
+HC1 <- subset(HC1, subset = percent.mt < 20)
+HC2 <- subset(HC2, subset = percent.mt < 20)
+HC4 <- subset(HC4, subset = percent.mt < 20)
+# ---------
+
 ## Normalization
 # ---------
 KD1 <- NormalizeData(KD1)
@@ -101,7 +111,6 @@ HC1 <- NormalizeData(HC1)
 HC2 <- NormalizeData(HC2)
 HC4 <- NormalizeData(HC4)
 # ---------
-
 # ------------------------
 
 
