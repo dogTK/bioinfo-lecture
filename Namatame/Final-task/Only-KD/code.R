@@ -10,18 +10,10 @@ library(clusterProfiler)
 library(celldex)
 library(ggplot2)
 library(org.Hs.eg.db)
-#library(igraph)
 #options(Seurat.object.assay.version = "v3")
 #devtools::install_version("dbplyr", version = "2.3.4")
 #packageVersion("dbplyr")
 # ------------------------
-
-#install.packages("igraph")
-#BiocManager::install("clusterProfiler")
-#install.packages("ggplot2")
-#install.packages("org.Hs.eg.db")
-#install.packages("clusterProfiler")
-#BiocManager::install("org.Hs.eg.db")
 
 
 # Load data
