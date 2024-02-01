@@ -31,7 +31,6 @@ KD1 [["percent.mt"]] <- PercentageFeatureSet(KD1, pattern = "^MT-")
 # VlnPlot(KD1, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 # ---------
 
-
 # Celldex
 # ------------------------
 ref <- celldex::HumanPrimaryCellAtlasData()
@@ -51,6 +50,12 @@ KD1_sub$singlr_labels
 # ------------------------
 ## ---------
 # Extract data with the label Monocyte
-Monocyte <- subset(KD1_sub, labels = "Monocyte")
+Monocyte <- subset(KD1_sub, labels == "Monocyte")
+Monocyte$labels
+# ------------------------
 
+
+# Normalization
+# ------------------------
+Monocyte <- NormalizeData(Monocyte, normalization.method = "LogNormalize", scale.factor = 10000)
 # ------------------------
