@@ -135,5 +135,6 @@ GOBP <- compareCluster(geneClusters = gene_list,
                        OrgDb = "org.Hs.eg.db")
 
 ## dotplot
+## Link : https://github.com/dogTK/bioinfo-lecture/blob/main/Namatame/Final-task/Only-KD/fig/dot_plot_KD.png
 dotplot(GOBP)
 # ------------------------
