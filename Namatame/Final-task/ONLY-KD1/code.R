@@ -45,29 +45,12 @@ KD1_sub$singlr_labels <- KD1_sub$labels
 KD1_sub$KDandHC <- KD1_sub$labels
 KD1_sub$singlr_labels
 # ------------------------
-# singlr_labels="Monocyte"
-
-
-cell.anchors <- FindIntegrationAnchors(object.list = cell, dims = 1:30)
-#object <- JoinLayers(object = object, layers = layer)
-#cell <- JoinLayers(CreateSeuratObject(cell))
-cell.int <- IntegrateData(anchorset = cell.anchors)
-
-# 
-# 
-
-
-
-
-
-
 
 
 # Extract Subset
-Monocyte <- subset(cell, idents = "Monocyte")
+# ------------------------
+## ---------
+# Extract data with the label Monocyte
+Monocyte <- subset(KD1_sub, labels = "Monocyte")
 
-## Normalization
-# ---------
-KD1 <- NormalizeData(KD1)
-# ---------
 # ------------------------
