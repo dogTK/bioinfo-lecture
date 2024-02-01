@@ -74,10 +74,8 @@ ref <- celldex::HumanPrimaryCellAtlasData()
 ALL_KD_sub <- subset(ALL_KD,subset = CX3CR1>2)
 results <- SingleR(test = as.SingleCellExperiment(ALL_KD_sub), ref = ref, labels = ref$label.main)
 ALL_KD_sub$singlr_labels <- results$labels
-#ALL_KD_sub$KDandHC <- results$labels
-#ALL_KD_sub$singlr_labels <- results$labels
-# ------------------------
 class(ALL_KD_sub)
+# ------------------------
 
 # Extract Subset
 # ------------------------
@@ -125,6 +123,7 @@ for(i in names(gene_list)){
 ## Number of genes remaining
 length(unlist(gene_list))/2
 
+## Molded for clusterProfiler
 for(i in names(gene_list)){
   gene_list[[i]] <- gene_list[[i]]$ENTREZID
 }
@@ -135,5 +134,6 @@ GOBP <- compareCluster(geneClusters = gene_list,
                        ont="BP",
                        OrgDb = "org.Hs.eg.db")
 
+## dotplot
 dotplot(GOBP)
 # ------------------------
