@@ -80,7 +80,7 @@ ref <- celldex::HumanPrimaryCellAtlasData()
 # ------------------------
 
 
-# Extract  subset
+# Cell labeling
 # ------------------------
 ALL_KD_sub <- subset(ALL_KD,subset = CX3CR1>2)
 results <- SingleR(test = as.SingleCellExperiment(ALL_KD_sub), ref = ref, labels = ref$label.main)
