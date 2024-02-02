@@ -68,6 +68,18 @@ table(ALL_KD$orig.ident)
 ref <- celldex::HumanPrimaryCellAtlasData()
 # ------------------------
 
+#preprocessing
+# ------------------------
+Monocyte <- Monocyte %>%
+  NormalizeData() %>% 
+  FindVariableFeatures() %>% 
+  ScaleData() %>% 
+  RunPCA() %>% 
+  RunUMAP(dims = 1:10) %>% 
+  FindNeighbors(dims = 1:10) %>% 
+  FindClusters(resolution = 0.5)
+# ------------------------
+
 
 # Extract  subset
 # ------------------------
@@ -83,19 +95,6 @@ class(ALL_KD_sub)
 # Extract data with the label Monocyte
 Monocyte <- subset(ALL_KD_sub,subset = singlr_labels == "Monocyte")
 Monocyte$singlr_labels
-# ------------------------
-
-
-#preprocessing
-# ------------------------
-Monocyte <- Monocyte %>%
-  NormalizeData() %>% 
-  FindVariableFeatures() %>% 
-  ScaleData() %>% 
-  RunPCA() %>% 
-  RunUMAP(dims = 1:10) %>% 
-  FindNeighbors(dims = 1:10) %>% 
-  FindClusters(resolution = 0.5)
 # ------------------------
 
 
