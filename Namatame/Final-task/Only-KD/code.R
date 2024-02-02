@@ -62,12 +62,6 @@ ALL_KD <- merge(KD1, y = c(KD2, KD3), add.cell.ids = c("KD1", "KD2", "KD3"), pro
 table(ALL_KD$orig.ident)
 # ------------------------
 
-
-# Celldex
-# ------------------------
-ref <- celldex::HumanPrimaryCellAtlasData()
-# ------------------------
-
 #preprocessing
 # ------------------------
 ALL_KD <- ALL_KD %>%
@@ -78,6 +72,11 @@ ALL_KD <- ALL_KD %>%
   RunUMAP(dims = 1:10) %>% 
   FindNeighbors(dims = 1:10) %>% 
   FindClusters(resolution = 0.5)
+# ------------------------
+
+# Celldex
+# ------------------------
+ref <- celldex::HumanPrimaryCellAtlasData()
 # ------------------------
 
 
