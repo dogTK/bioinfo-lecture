@@ -84,13 +84,15 @@ ref <- celldex::HumanPrimaryCellAtlasData()
 # ------------------------
 results <- SingleR(test = as.SingleCellExperiment(ALL_KD), ref = ref, labels = ref$label.main)
 ALL_KD$singlr_labels <- results$labels
-ALL_KD_sub <- subset(ALL_KD,subset = CX3CR1>2)
-class(ALL_KD_sub)
 # ------------------------
 
 # Extract Subset
 # ------------------------
 ## ---------
+#  Extract subset by CX3CR1 expression level
+ALL_KD_sub <- subset(ALL_KD,subset = CX3CR1>2)
+class(ALL_KD_sub)
+
 # Extract data with the label Monocyte
 Monocyte <- subset(ALL_KD_sub,subset = singlr_labels == "Monocyte")
 Monocyte$singlr_labels
