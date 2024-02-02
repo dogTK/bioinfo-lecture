@@ -70,7 +70,7 @@ ref <- celldex::HumanPrimaryCellAtlasData()
 
 #preprocessing
 # ------------------------
-Monocyte <- Monocyte %>%
+ALL_KD <- ALL_KD %>%
   NormalizeData() %>% 
   FindVariableFeatures() %>% 
   ScaleData() %>% 
