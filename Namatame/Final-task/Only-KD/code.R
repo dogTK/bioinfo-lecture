@@ -82,9 +82,9 @@ ref <- celldex::HumanPrimaryCellAtlasData()
 
 # Cell labeling
 # ------------------------
+results <- SingleR(test = as.SingleCellExperiment(ALL_KD), ref = ref, labels = ref$label.main)
+ALL_KD$singlr_labels <- results$labels
 ALL_KD_sub <- subset(ALL_KD,subset = CX3CR1>2)
-results <- SingleR(test = as.SingleCellExperiment(ALL_KD_sub), ref = ref, labels = ref$label.main)
-ALL_KD_sub$singlr_labels <- results$labels
 class(ALL_KD_sub)
 # ------------------------
 
