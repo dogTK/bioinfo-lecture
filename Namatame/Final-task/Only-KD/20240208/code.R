@@ -86,9 +86,36 @@ results <- SingleR(test = as.SingleCellExperiment(ALL_KD), ref = ref, labels = r
 ALL_KD$singlr_labels <- results$labels
 # ------------------------
 
+
+# Check labels without duplicates
+# ------------------------
+unique_labels <- unique(ALL_KD$singlr_labels)
+print(unique_labels)
+# ------------------------
+
+
 # Dimplot
 # ------------------------
 DimPlot(ALL_KD, reduction = "umap", group.by = 'singlr_labels' ,label = TRUE)
+# ------------------------
+
+
+# Get list of genes in ALL_KD
+# ------------------------
+gene_li <- row.names(ALL_KD)
+print(gene_li)
+write.table(gene_li, file = "gene_li.txt", quote = FALSE, row.names = FALSE)
+# ------------------------
+
+
+# Feature Plot
+# ------------------------
+FeaturePlot(ALL_KD, features = c("CX3CR1"))
+FeaturePlot(ALL_KD, features = c("UQCRHL"))
+FeaturePlot(ALL_KD, features = c("ACTB"))
+FeaturePlot(ALL_KD, features = c("GAPDH"))
+FeaturePlot(ALL_KD, features = c("IFNG"))
+FeaturePlot(ALL_KD, features = c("TNF"))
 # ------------------------
 
 
@@ -102,6 +129,10 @@ class(ALL_KD_sub)
 # Extract data with the label Monocyte
 Monocyte <- subset(ALL_KD_sub,subset = singlr_labels == "Monocyte")
 Monocyte$singlr_labels
+
+# Dimplot of Monocyte
+#DimPlot(Monocyte,reduction = "umap", group.by = 'singlr_labels' ,label = TRUE)
+# No particularly useful findings were found.
 # ------------------------
 
 
@@ -113,7 +144,7 @@ table(deg$cluster)
 # ------------------------
 
 
-# dotplot
+# Plot result
 # ------------------------
 ## Vectorize DEGs by clusters and compile them into a list
 gene_list <- split(deg$gene, deg$cluster)
@@ -142,5 +173,23 @@ GOBP <- compareCluster(geneClusters = gene_list,
 
 ## dotplot
 ## Link : 
-dotplot(GOBP)
+#dotplot(GOBP)
+
+## barplot
+GOBP_bar <- enrichGO(unlist(gene_list), OrgDb = "org.Hs.eg.db", keyType = "ENTREZID")
+barplot(GOBP_bar)
+### Specify showCategory as 20.
+par(mar = c(5, 4, 4, 2),cex.axis=0.3, cex.lab=1)
+barplot(GOBP_bar,showCategory=10)
+
+## Fixed to original margins
+par(mar=c(5, 4, 4, 2), cex.axis=1, cex.lab=1)
+
+## KEGG Pathway Enrichment Analysis
+#enrich_result <- compareCluster(geneClusters = gene_list,
+#                               fun = "enrichKEGG",
+#                                organism = "hsa")
+#enrich_result <- enrichKEGG(gene = gene_list, organism = 'hsa', pvalueCutoff = 0.05)
+## barplot
+#barplot(enrich_result, showCategory = 20)
 # ------------------------
