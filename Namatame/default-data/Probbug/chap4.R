@@ -1,4 +1,4 @@
-# ライブラリインポート
+# import library
 library(dplyr)
 library(Seurat)
 library(patchwork)
