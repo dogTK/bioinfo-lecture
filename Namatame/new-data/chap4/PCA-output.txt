@@ -1,0 +1,15 @@
+PC_ 1 
+Positive:  Cd52, Coro1a, Ptprc, Rac2, Tmsb4x 
+Negative:  Serpinh1, Sparc, Fstl1, Timp2, Aebp1 
+PC_ 2 
+Positive:  Alox5ap, Il1b, Spi1, Lyz2, Lst1 
+Negative:  Cd3d, Cd3g, H2-Q7, Gimap6, Ms4a4b 
+PC_ 3 
+Positive:  Mmrn2, Ptprb, Egfl7, Tm4sf1, Podxl 
+Negative:  Tmsb10, Dpt, Clec3b, C4b, Scara5 
+PC_ 4 
+Positive:  Egfl7, Cldn5, Cdh5, Podxl, Ramp2 
+Negative:  Myh11, Tpm2, Myl9, Acta2, Tagln 
+PC_ 5 
+Positive:  Mmp9, S100a8, S100a9, Hdc, Cxcr2 
+Negative:  Cd74, H2-Ab1, H2-Aa, H2-Eb1, H2-DMa 
